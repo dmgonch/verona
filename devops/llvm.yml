@@ -20,13 +20,13 @@ jobs:
         BuildType: Release
         BuildName: release
         Sanitizer:
-      Clang Debug+ASAN:
-        CC: clang
-        CXX: clang++
-        CXXFLAGS: -stdlib=libstdc++
-        BuildType: Debug
-        BuildName: debug
-        Sanitizer: Address
+#      Clang Debug+ASAN:
+#        CC: clang
+#        CXX: clang++
+#        CXXFLAGS: -stdlib=libstdc++
+#        BuildType: Debug
+#        BuildName: debug
+#        Sanitizer: Address
   variables:
   - name: PKG_NAME
     value: verona-llvm-install-x86_64-linux-$(BuildName)-$(GOOD_HASH)
@@ -80,12 +80,12 @@ jobs:
   timeoutInMinutes: 120
   strategy:
     matrix:
-      Debug:
-        BuildType: Debug
-        BuildName: debug
       Release:
         BuildType: Release
         BuildName: release
+#      Debug:
+#        BuildType: Debug
+#        BuildName: debug
   variables:
   - name: PKG_NAME
     value: verona-llvm-install-x86_64-windows-$(BuildName)-$(GOOD_HASH)
@@ -152,9 +152,9 @@ jobs:
       Release:
         BuildType: Release
         BuildName: release
-      Debug:
-        BuildType: Debug
-        BuildName: debug
+#      Debug:
+#        BuildType: Debug
+#        BuildName: debug
   variables:
   - name: PKG_NAME
     value: verona-llvm-install-x86_64-darwin-$(BuildName)-$(GOOD_HASH)
